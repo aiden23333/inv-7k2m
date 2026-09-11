@@ -327,7 +327,7 @@
     </div>
   </section>
 
-  <a class="map-card anim d6" id="mapCard" href="https://uri.amap.com/marker?position=113.211067,30.655861&name=%E5%8F%B6%E5%AE%B6%E8%80%81%E5%AE%85%EF%BC%88%E5%A4%A9%E9%97%A8%E5%B8%82%E6%9D%A8%E6%9E%97%E5%8A%9E%E4%BA%8B%E5%A4%84%E5%BE%90%E5%8C%97%E6%9D%91%EF%BC%89&src=workbuddy&coordinate=gaode&callnative=1" data-apple="https://maps.apple.com/place?address=%E4%B8%AD%E5%9B%BD%E6%B9%96%E5%8C%97%E7%9C%81%E5%A4%A9%E9%97%A8%E5%B8%82%E6%9D%A8%E6%9E%97%E5%8A%9E%E4%BA%8B%E5%A4%84&coordinate=30.655861,113.211067&name=%E5%BE%90%E5%8C%97%E6%9D%91&place-id=H2710I3F88086B653D2&map=explore"
+  <a class="map-card anim d6" id="mapCard" href="https://uri.amap.com/navigation?to=113.211067,30.655861,%E5%8F%B6%E5%AE%B6%E8%80%81%E5%AE%85&mode=car&policy=1&src=workbuddy&coordinate=gaode&callnative=1"
      target="_blank" rel="noopener">
     <img class="map-img" src="assets/map-thumb.jpg" alt="天门市杨林办事处徐北村 位置示意" loading="lazy" decoding="async">
     <svg class="map-svg" viewBox="0 0 380 134" preserveAspectRatio="none" aria-hidden="true">
@@ -339,13 +339,14 @@
     </svg>
     <span class="map-tap">天门市 · 杨林办事处 · 徐北村</span>
     <span class="map-cta">
-      点击查看地图
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-           stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg>
+      点击开始导航
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2 4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/>
+      </svg>
     </span>
     <span class="map-credit">© 高德地图</span>
   </a>
-  <p class="map-alt anim d6">打不开？试试
+  <p class="map-alt anim d6">打不开？换这些地图：
     <a href="https://uri.amap.com/marker?position=113.211067,30.655861&name=%E5%8F%B6%E5%AE%B6%E8%80%81%E5%AE%85%EF%BC%88%E5%A4%A9%E9%97%A8%E5%B8%82%E6%9D%A8%E6%9E%97%E5%8A%9E%E4%BA%8B%E5%A4%84%E5%BE%90%E5%8C%97%E6%9D%91%EF%BC%89&src=workbuddy&coordinate=gaode&callnative=1" target="_blank" rel="noopener">高德</a>
     <span class="sep">·</span>
     <a href="https://apis.map.qq.com/uri/v1/marker?marker=coord:30.655861,113.211067;title:%E5%8F%B6%E5%AE%B6%E8%80%81%E5%AE%85;addr:%E5%A4%A9%E9%97%A8%E5%B8%82%E6%9D%A8%E6%9E%97%E5%8A%9E%E4%BA%8B%E5%A4%84%E5%BE%90%E5%8C%97%E6%9D%91&referer=workbuddy" target="_blank" rel="noopener">腾讯</a>
@@ -454,16 +455,6 @@
 
 <script>
   (function () {
-    /* iPhone / iPad 上换用 Apple 地图，精确落到已核验的「徐北村」地点页；
-       Android 等机型没有 Apple 地图，继续走高德。 */
-    var _mc = document.getElementById('mapCard');
-    if (_mc) {
-      var _ua = navigator.userAgent || '';
-      var _ios = /iPhone|iPad|iPod/.test(_ua) ||
-                 (/Macintosh/.test(_ua) && 'ontouchend' in document);
-      var _apple = _mc.getAttribute('data-apple');
-      if (_ios && _apple) _mc.setAttribute('href', _apple);
-    }
     var t = new Date(2026, 9, 3, 0, 0, 0);
     var d = Math.ceil((t - new Date()) / 86400000);
     document.getElementById('days').textContent = d > 0 ? d : (d === 0 ? '就在今天' : '已圆满');
